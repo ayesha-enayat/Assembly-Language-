@@ -10,8 +10,8 @@ r db ?
 .code 
 main proc
 mov ax,@data
-
 mov ds,ax
+
 mov ax,27
 mov bl,5
  
