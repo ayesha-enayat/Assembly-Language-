@@ -1,10 +1,10 @@
-; oddsum.asm
+; evensum.asm
 .model small
 .stack 100h
 
 .data
     sum dw 0                               ; Variable to store the sum
-    message db 'The sum of odd numbers between 1 and 100 is: $'
+    message db 'The sum of even numbers between 1 and 100 is: $'
     newline db 0Dh, 0Ah, '$'               ; Carriage return and line feed
 
 .code
@@ -14,13 +14,13 @@ main proc
     mov ds, ax
 
     ; Initialize Registers
-    mov cx, 50              ; Counter for 50 odd numbers
+    mov cx, 50              ; Counter for 50 even numbers
     xor ax, ax              ; Clear AX to store sum
-    mov bx, 1               ; Starting odd number (1)
+    mov bx, 2               ; Starting even number (2)
 
 sum_loop:
-    add ax, bx              ; Add current odd number to sum
-    add bx, 2               ; Move to the next odd number
+    add ax, bx              ; Add current even number to sum
+    add bx, 2               ; Move to the next even number
     loop sum_loop           ; Decrement CX and loop if not zero
 
     mov sum, ax             ; Store the final sum in 'sum'
