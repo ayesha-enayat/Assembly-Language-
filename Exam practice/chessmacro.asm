@@ -1,7 +1,7 @@
 blackSquare macro row,column,erow,ecol
 mov ah,6h      ;to print shape
 mov al,4     ;length
-mov bh, 00000000b
+mov bh, 000000000b
 mov ch,row    ;top row
 mov cl,column      ;left col
 mov dh,erow     ;bottom row  niche se length kam hogayi
@@ -20,7 +20,7 @@ mov bh, 01111000b
 mov ch,0            ;top row
 mov cl,0            ;left col
 mov dh,24           ;bottom row
-mov dl,24           ;right col (width right se barhti hai)
+mov dl,24          ;right col (width right se barhti hai)
 int 10h             ;interrupt command in graphics
 
 blackSquare 17,0,20,24

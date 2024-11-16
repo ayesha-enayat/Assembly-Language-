@@ -1,7 +1,7 @@
 .model small
 .stack 100h
 .data
-    inputString db 'HelleAuA', 0 ; Input string with null terminator
+    inputString db 'Ayesha', 0 ; Input string with null terminator
     vowels db 'aeiouAEIOU', 0  ; Vowels to check, terminated with 0
     output db 50 dup(0) ; Space for output (initialize with 0)
 
@@ -10,7 +10,7 @@ Main proc
     ; Set up data segments
     mov ax, @data
     mov ds, ax
-    mov es, ax
+    ;mov es, ax
 
     ; Initialize source and destination pointers using MOV and OFFSET
     mov si, offset inputString  ; Load address of inputString into SI
@@ -22,11 +22,12 @@ next_char:
     je display_output    ; Jump to output display if end of string
 
     ; Check if the character is a vowel using MOV
-    mov bx, offset vowels ; Load address of vowels string into BX
+
+    mov bx, offset vowels    ; Load address of vowels string into BX
 check_vowel:
-    mov dl, [bx]         ; Load the next vowel into DL (using DL for comparison)
-    cmp dl, 0            ; Check if end of vowels string (null terminator)
-    je not_vowel         ; If end of vowels string, it's not a vowel
+    mov dl, [bx]             ; Load the next vowel into DL (using DL for comparison)
+    cmp dl, 0                ; Check if end of vowels string (null terminator)
+    je not_vowel             ; If end of vowels string, it's not a vowel
 
     cmp al, dl           ; Compare input character with current vowel
     je is_vowel          ; If match, it's a vowel

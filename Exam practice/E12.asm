@@ -3,7 +3,7 @@ dosseg
 .model small
 .stack 100h
 .data
-arr1 db 1,2,3,4,
+arr1 db 1,2,3,4,5
 
 .code
 main proc
